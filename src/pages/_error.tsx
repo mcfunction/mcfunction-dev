@@ -1,11 +1,21 @@
 import { NextPageContext } from 'next'
 import DefaultLayout from '../layouts/DefaultLayout/DefaultLayout'
 import styles from './_error.module.scss'
-import Head from 'next/head'
 import Link from 'next/link'
-import './_error.i18n'
 import { useTranslation } from 'react-i18next'
 import Meta from '../components/Meta/Meta'
+import i18next from 'i18next'
+import { initReactI18next } from 'react-i18next'
+
+if (Object.keys(i18next.options).length === 0) {
+  i18next.use(initReactI18next).init({
+    fallbackLng: 'en',
+  })
+}
+
+i18next.addResources('ja', 'translation', {
+  Home: 'ホーム',
+})
 
 interface Props {
   statusCode: number

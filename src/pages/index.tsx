@@ -1,7 +1,5 @@
-import Link from 'next/link'
 import DefaultLayout from '../layouts/DefaultLayout/DefaultLayout'
 import styles from './index.module.scss'
-import Head from 'next/head'
 import { useTranslation } from 'react-i18next'
 import Image from 'next/image'
 import FunctionEditor from '../components/FunctionEditor/FunctionEditor'
@@ -9,8 +7,19 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { ProjectManager } from '../components/FunctionEditor/lib/ProjectManager'
 import { ICodeList } from '../components/FunctionEditor/lib/Project'
-import classNames from 'classnames'
 import Meta from '../components/Meta/Meta'
+import i18next from 'i18next'
+import { initReactI18next } from 'react-i18next'
+
+if (Object.keys(i18next.options).length === 0) {
+  i18next.use(initReactI18next).init({
+    fallbackLng: 'en',
+  })
+}
+
+i18next.addResources('ja', 'translation', {
+  Commands: 'コマンド一覧',
+})
 
 interface ICommand {
   id: string
