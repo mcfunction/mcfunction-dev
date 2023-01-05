@@ -1,0 +1,17 @@
+.ErrorPage {
+  &,
+  *,
+  *::after,
+  *::before {
+    box-sizing: border-box;
+  }
+
+  &__Title {
+    font-size: 128px;
+    text-align: center;
+  }
+
+  &__Text {
+    text-align: center;
+  }
+}

@@ -1,0 +1,18 @@
+.CommandPage {
+  &,
+  *,
+  *::after,
+  *::before {
+    box-sizing: border-box;
+  }
+
+  &__Main {
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 15px;
+  }
+
+  &__Heading {
+    text-align: center;
+  }
+}

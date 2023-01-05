@@ -1,0 +1,75 @@
+.HomePage {
+  &,
+  *,
+  *::after,
+  *::before {
+    box-sizing: border-box;
+  }
+
+  &__Description {
+    padding: 100px 0;
+    color: #333;
+    font-family: 'Times New Roman', Times, serif;
+
+    &,
+    *,
+    *::after,
+    *::before {
+      box-sizing: border-box;
+    }
+
+    & > * + * {
+      margin-top: 70px;
+    }
+
+    &__Top {
+      text-align: center;
+    }
+
+    &__Icon {
+      width: 30px;
+      height: 30px;
+    }
+
+    &__Usage {
+      text-align: center;
+
+      &__List {
+        display: flex;
+        justify-content: center;
+
+        & > div > * + * {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &__Description {
+      &__Usage {
+        &__List {
+          flex-direction: column;
+
+          & > * + * {
+            margin-top: 15px;
+          }
+        }
+      }
+    }
+  }
+
+  @media not screen and (max-width: 768px) {
+    &__Description {
+      &__Usage {
+        &__List {
+          & > * + * {
+            margin-left: 15px;
+            padding-left: 15px;
+            border-left: 1px solid rgb(0 0 0 / 10%);
+          }
+        }
+      }
+    }
+  }
+}
